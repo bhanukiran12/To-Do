@@ -1,0 +1,29 @@
+###
+
+GET http://localhost:5000/todos 
+
+
+###
+
+POST http://localhost:5000/todos/save
+Content-Type: application/json
+
+{
+    "data" : [
+        {
+            "id": "1",
+            "name": "First Task",
+            "status": "complete"
+        },
+        {
+            "id": "2",
+            "name": "Second Task",
+            "status": "incomplete"
+        }
+    ]
+}
+
+###
+
+
+DELETE http://localhost:5000/todos/delete
