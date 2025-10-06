@@ -44,14 +44,11 @@ app.post("/todos/save", async (req, res) => {
         INSERT INTO todo (id , name , status)
         VALUES ("${id}" , "${name}" , "${status}")
     `;
-    const getQuery = `
-      SELECT name from todo WHERE name = "${name}"
-    `;
-    const getResponse = await db.all(getQuery);
+    
 
-    if (getResponse.length === 0) {
-      await db.run(postQuery);
-    }
+    
+    await db.run(postQuery);
+    
   }
   res.send({ message: "All todos saved successfully" });
 });
